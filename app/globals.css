@@ -1,8 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5f3ee;
+  --background-strong: #f0efe9;
+  --surface: rgba(255, 255, 255, 0.82);
+  --surface-strong: #ffffff;
+  --foreground: #111827;
+  --muted: #526074;
+  --muted-strong: #2f3a4b;
+  --border: rgba(15, 23, 42, 0.1);
+  --line-strong: rgba(15, 23, 42, 0.14);
+  --accent: #0f172a;
+  --accent-soft: #dfeae7;
+  --accent-strong: #0f766e;
+  --highlight: #b45309;
+  --shadow-soft: 0 18px 48px rgba(15, 23, 42, 0.08);
+  --shadow-strong: 0 26px 72px rgba(15, 23, 42, 0.12);
 }
 
 @theme inline {
@@ -12,15 +25,80 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(circle at top, rgba(15, 118, 110, 0.08), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(148, 163, 184, 0.12), transparent 22%),
+    linear-gradient(180deg, #f9f7f3 0%, var(--background) 32%, #f1f5f9 100%);
+  background-position: center center;
+  background-repeat: no-repeat;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: center center;
+  mask-image: radial-gradient(circle at center, black 55%, transparent 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(15, 118, 110, 0.16);
+}
+
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 3px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+@layer base {
+  p,
+  ul,
+  ol,
+  dl,
+  dd,
+  dt,
+  li,
+  span {
+    margin: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
