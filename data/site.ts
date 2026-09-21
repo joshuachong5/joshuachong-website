@@ -57,8 +57,12 @@ export const experienceEntries = [
     details: ["C++", "PID control", "Odometry", "Adaptive Pure Pursuit"],
     highlight:
       "Competed at VEX Worlds in 2022, 2024, and 2025, with a global top-1% ranking and repeated state qualifications.",
-    items: [],
-    href: "/experience",
+    items: [
+      "Developed and tuned autonomous path following, odometry, and control logic across multiple VEX seasons under changing game constraints.",
+      "Built and refined PID, odometry, and adaptive pure pursuit behaviors to improve robot reliability and match execution in competition.",
+      "Supported team strategy and execution through repeated state qualification and qualification for VEX Worlds in 2022, 2024, and 2025.",
+    ],
+    href: undefined,
   },
   {
     title: "Researcher and Co-Author",
@@ -72,7 +76,7 @@ export const experienceEntries = [
     items: [
       "Synthesized findings from 300+ papers to surface recurring risks around access, safety, and workplace design.",
     ],
-    href: "/experience",
+    href: undefined,
   },
 ];
 
@@ -84,6 +88,7 @@ export const featureProjects = [
       "Planning software for a driverless race car, turning cone maps and vehicle state estimates into smooth trajectories the car can actually follow.",
     tags: ["ROS2", "C++", "Python", "GTSAM", "SLAM", "Optimization"],
     href: "/cmu-racing",
+    ctaLabel: "Learn more",
   },
   {
     title: "Chess Engine",
@@ -91,7 +96,8 @@ export const featureProjects = [
     description:
       "A C++20 engine with legal move generation, UCI support, alpha-beta search, iterative deepening, quiescence search, transposition tables, and an SFML interface. It currently plays around 1850 Elo, with 2000+ as the next target.",
     tags: ["C++", "Alpha-beta", "SFML", "Search", "Evaluation"],
-    href: "/projects",
+    href: "https://github.com/joshuachong5/Chess-Engine",
+    ctaLabel: "GitHub",
   },
 ];
 

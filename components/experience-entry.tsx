@@ -9,7 +9,7 @@ type ExperienceEntryProps = {
   details: string[];
   highlight: string;
   items?: string[];
-  href: string;
+  href?: string;
 };
 
 export function ExperienceEntry({
@@ -55,12 +55,14 @@ export function ExperienceEntry({
         </ul>
       ) : null}
 
-      <Link
-        href={href}
-        className="mt-8 inline-flex text-sm font-semibold text-teal-800 underline decoration-teal-700/40 underline-offset-4 transition-colors duration-200 group-hover:text-teal-900 group-hover:decoration-teal-700"
-      >
-        View details
-      </Link>
+      {href ? (
+        <Link
+          href={href}
+          className="mt-8 inline-flex text-sm font-semibold text-teal-800 underline decoration-teal-700/40 underline-offset-4 transition-colors duration-200 group-hover:text-teal-900 group-hover:decoration-teal-700"
+        >
+          View details
+        </Link>
+      ) : null}
     </article>
   );
 }

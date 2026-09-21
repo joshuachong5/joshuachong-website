@@ -10,23 +10,23 @@ export function SiteHeader() {
 
   const navItems = isHome
     ? [
-        { href: "/", label: "Home" },
+        { href: "/#top", label: "Home" },
         { href: "#introduction", label: "About" },
         { href: "#experience", label: "Experience" },
         { href: "#projects", label: "Projects" },
       ]
     : [
-        { href: "/", label: "Home" },
-        { href: "/about", label: "About" },
-        { href: "/experience", label: "Experience" },
-        { href: "/projects", label: "Projects" },
+        { href: "/#top", label: "Home" },
+        { href: "/#introduction", label: "About" },
+        { href: "/#experience", label: "Experience" },
+        { href: "/#projects", label: "Projects" },
       ];
 
   return (
     <header id="top" className="sticky top-0 z-50 border-b border-slate-200/80 bg-[#f9f7f3]/85 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
         <Link
-          href="/"
+          href="/#top"
           className="flex shrink-0 items-center gap-3 text-sm font-semibold text-slate-950 transition-colors hover:text-teal-800"
           aria-label="Joshua Chong home"
         >
